@@ -1,0 +1,24 @@
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+# These files are text and should be normalized (Convert crlf => lf)
+*.gitattributes text
+.gitignore text
+*.md text
+*.java text
+*.xhtml text
+
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+
+# Please take a look to the following documentation before updating this file
+# https://help.github.com/articles/dealing-with-line-endings/
