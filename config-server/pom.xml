@@ -58,7 +58,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>UserInfoTask</finalName>
+		<finalName>config-server</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -132,37 +132,37 @@
 										<if name="deploy.target1">
 											<echo message="Creating deploy directory on ${deploy.target1}" />
 											<sshexec host="${deploy.target1}" username="tomcat"
-													 passphrase="" trust="true" keyfile="/home/forrestr/.ssh/hudson-key"
+													 passphrase="" trust="true" keyfile="/home/jorgevs/.ssh/hudson-key"
 													 failonerror="true" timeout="300000" command="mkdir -p /home/tomcat/deploy" />
 
 											<echo message="Sending deploy script to ${deploy.target1}" />
 											<scp remoteTodir="tomcat@${deploy.target1}:/home/tomcat/deploy/"
-												 keyfile="/home/forrestr/.ssh/hudson-key" passphrase=""
+												 keyfile="/home/tomcat/.ssh/hudson-key" passphrase=""
 												 trust="true" file="${basedir}/src/deploy/deploy.sh" />
 
 											<scp remoteTodir="tomcat@${deploy.target1}:/home/tomcat/deploy/"
-												 keyfile="/home/forrestr/.ssh/hudson-key" passphrase=""
+												 keyfile="/home/tomcat/.ssh/hudson-key" passphrase=""
 												 trust="true" file="${basedir}/src/deploy/startup.sh" />
 
 											<echo message="Sending artifact to ${deploy.target1}" />
 											<scp remoteTodir="tomcat@${deploy.target1}:/home/tomcat/deploy/"
-												 keyfile="/home/forrestr/.ssh/hudson-key" passphrase=""
+												 keyfile="/home/tomcat/.ssh/hudson-key" passphrase=""
 												 trust="true"
 												 file="${project.build.directory}/${project.build.finalName}.${project.packaging}" />
 
 											<echo message="Running deploy script on ${deploy.target1}" />
 											<sshexec host="${deploy.target1}" username="tomcat"
-													 keyfile="/home/forrestr/.ssh/hudson-key" passphrase=""
+													 keyfile="/home/tomcat/.ssh/hudson-key" passphrase=""
 													 trust="true"
 													 command="chmod a+x /home/tomcat/deploy/deploy.sh ; /home/tomcat/deploy/deploy.sh"
 													 failonerror="true" timeout="300000" />
 
 											<echo message="Running startup script on ${deploy.target1}" />
 											<sshexec host="${deploy.target1}" username="tomcat"
-													 keyfile="/home/forrestr/.ssh/hudson-key" passphrase=""
+													 keyfile="/home/jorgevs/.ssh/hudson-key" passphrase=""
 													 trust="true"
 													 command="chmod a+x /home/tomcat/deploy/startup.sh ;
-										/home/tomcat/deploy/startup.sh ${propKey} ${profile} ${configUser} ${configPass} ${configURI} ${serverUser} ${serverPassword}"
+													 /home/tomcat/deploy/startup.sh ${configUserName} ${configPassword} ${configURI} ${configProfile} ${configEncKey}"
 													 failonerror="true" timeout="300000" />
 										</if>
 									</else>
