@@ -13,7 +13,10 @@ import java.util.Arrays;
 public class App {
     public static void main(String[] args) {
         System.out.println("Starting my first SpringBoot App");
-        SpringApplication.run(App.class, args);
+        ApplicationContext ctx = SpringApplication.run(App.class, args);
+        for (String beanName : ctx.getBeanDefinitionNames()) {
+            System.out.println("beanName1: " + beanName);
+        }
     }
 
     @Bean
@@ -25,7 +28,7 @@ public class App {
             String[] beanNames = ctx.getBeanDefinitionNames();
             Arrays.sort(beanNames);
             for (String beanName : beanNames) {
-                System.out.println(beanName);
+                System.out.println("beanName2: " + beanName);
             }
 
         };
