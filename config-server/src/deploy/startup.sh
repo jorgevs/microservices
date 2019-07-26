@@ -1,14 +1,15 @@
 #!/bin/bash
 
-#$1 configUserName
-#$2 configPassword
+#$1 configUser
+#$2 configPass
 #$3 configURI
-#$4 configProfile
-#$5 configEncKey
+#$4 profile
+#$5 propKey
+#$6 githubUser
+#$7 githubPass
 
-APP_BASE_DIR=/data/microservices/config-server
+APP_BASE_DIR=/data/microREST/config-server
 DEPLOYMENT_FILE=config-server.jar
 JAVA_HOME=/data/java/
 
-#nohup $JAVA_HOME/bin/java -Xmx256m -Xss256k -DpropKey=$1 -Dprofile=$2 -DconfigUser=$3 -DconfigPass=$4 -DconfigURI="http://$5:8091/" -DserverUser=$6 -DserverPassword=$7 -jar ${APP_BASE_DIR}/bin/${DEPLOYMENT_FILE} > ${APP_BASE_DIR}/logs/config-server.log 2>&1 &
-nohup $JAVA_HOME/bin/java -Xmx256m -Xss256k -DconfigUserName=$1 -DconfigPassword=$2 -DconfigURI=$3 -DconfigProfile=$4 -DconfigEncKey=$5 -jar ${APP_BASE_DIR}/bin/${DEPLOYMENT_FILE} > ${APP_BASE_DIR}/logs/config-server.log 2>&1 &
+nohup $JAVA_HOME/bin/java -Xmx256m -Xss256k -DconfigUser=$1 -DconfigPass=$2 -DconfigURI=$3 -Dprofile=$4 -DpropKey=$5 -DgithubUser=$6 -DgithubPass=$7 -jar ${APP_BASE_DIR}/bin/${DEPLOYMENT_FILE} > ${APP_BASE_DIR}/logs/config-server.log 2>&1 &
