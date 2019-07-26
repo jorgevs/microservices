@@ -10,7 +10,7 @@ APP_NAME=config-server
 APP_BASE_DIR=/data/microREST/${APP_NAME}
 DEPLOYMENT_FILE=${APP_NAME}.jar
 STARTUP_SCRIPT=startup.sh
-DEPLOYMENT_FOLDER=/home/jorgevs/deploy/
+DEPLOYMENT_FOLDER=/home/jorgevs/deploy/${APP_NAME}
 
 # shutdown the application first
 curl -X POST 'http://localhost:9000/microREST/v1/actuator/shutdown'
