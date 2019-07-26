@@ -6,13 +6,13 @@
 #$4 configPass
 #$5 propKey
 
-APP_BASE_DIR=/data/microREST/config-server
-DEPLOYMENT_FILE=config-server.jar
+APP_NAME=config-server
+APP_BASE_DIR=/data/microREST/${APP_NAME}
+DEPLOYMENT_FILE=${APP_NAME}.jar
 STARTUP_SCRIPT=startup.sh
 DEPLOYMENT_FOLDER=/home/jorgevs/deploy/
 
 # shutdown the application first
-#curl -X POST http://localhost:8091/manage/shutdown -H "authorization: Basic $1" -H 'cache-control: no-cache'
 curl -X POST 'http://localhost:9000/microREST/v1/actuator/shutdown'
 
 # wait 15 seconds
