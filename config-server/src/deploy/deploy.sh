@@ -1,12 +1,10 @@
 #!/bin/bash
 
-#$1 configUser
-#$2 configPass
-#$3 configURI
-#$4 profile
+#$1 githubUser
+#$2 githubPass
+#$3 configUser
+#$4 configPass
 #$5 propKey
-#$6 githubUser
-#$7 githubPass
 
 APP_BASE_DIR=/data/microREST/config-server
 DEPLOYMENT_FILE=config-server.jar
@@ -26,4 +24,4 @@ cp ${DEPLOYMENT_FOLDER}/${DEPLOYMENT_FILE} ${APP_BASE_DIR}/bin
 cp ${DEPLOYMENT_FOLDER}/${STARTUP_SCRIPT} ${APP_BASE_DIR}/bin
 
 chmod +x ${APP_BASE_DIR}/bin/${STARTUP_SCRIPT}
-${APP_BASE_DIR}/bin/${STARTUP_SCRIPT} $1 $2 $3 $4 $5 $6 $7
+${APP_BASE_DIR}/bin/${STARTUP_SCRIPT} $1 $2 $3 $4 $5
