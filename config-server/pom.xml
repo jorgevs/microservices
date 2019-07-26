@@ -13,7 +13,7 @@
 	<groupId>com.jvs</groupId>
 	<artifactId>config-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ConfigServerApplication</name>
+	<name>config-server</name>
 	<description>Cloud Config Server - Spring Boot</description>
 
 	<properties>

@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>com.jvs</groupId>
-	<artifactId>cloud-config-client</artifactId>
+	<artifactId>config-client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CloudConfigClient</name>
+	<name>config-client</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
