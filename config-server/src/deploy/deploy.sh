@@ -13,7 +13,7 @@ STARTUP_SCRIPT=startup.sh
 DEPLOYMENT_FOLDER=/home/jorgevs/deploy/${APP_NAME}
 
 # shutdown the application first
-curl -X POST 'http://localhost:9000/microREST/v1/actuator/shutdown'
+curl -X POST 'http://localhost:9000/microREST/v1/actuator/shutdown' -H "authorization: Basic am9yZ2V2czpqb3JnZXZzcHdk" -H 'cache-control: no-cache'
 
 # wait 15 seconds
 echo 'sleep 15 seconds'
